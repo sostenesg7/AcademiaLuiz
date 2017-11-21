@@ -1,0 +1,182 @@
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>Atualizar Funcionario</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <style>
+            .jumbotron{
+                width:800px;
+                text-align: center;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+        </style>
+
+
+        <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script>
+            if (typeof window.history.pushState == 'function') {
+                window.history.pushState({}, "Hide", "http://localhost:8084/mavenprojetoISI/");
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Academia FitPro - <span>Atualizar Funcionario</span></h1>
+        <hr>
+
+    <body ng-app="aplicacao">
+
+        <div ng-controller="ControladorAlunos as contFuncionarios"  class="jumbotron">
+
+
+            <input class="btn btn-primary btn-block" type="button" value="Listar Funcionarios" ng-click="contFuncionarios.listarFuncionarios()">
+
+            <div>
+                <table >
+                    <tr>
+                        <td>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Idade</th>
+                                    <th>Telefone</th>
+                                    <th>Rua</th>
+                                    <th>Bairro</th>
+                                    <th>Cidade</th>
+                                    <th>Num Contrato</th>
+                                    <th>Senha</th>
+
+                                </tr>
+                                <tr ng-repeat="funcionario in contFuncionarios.dados">
+                                    <td>{{funcionario.nomeFun}}</td>
+                                    <td>{{funcionario.idadeFun}}</td>
+                                    <td>{{funcionario.telefoneFun}}</td>
+                                    <td>{{funcionario.ruaFun}}</td>
+                                    <td>{{funcionario.bairroFun}}</td>
+                                    <td>{{funcionario.cidadeFun}}</td>
+                                    <td>{{funcionario.numContrato}}</td>
+                                    <td>{{funcionario.senhaFun}}</td>
+
+
+                                </tr>
+
+                            </table>
+
+                        <td>
+
+                    <tr>
+                </table>   
+            </div>
+        </div>
+
+
+
+        <div ng-controller="ControladorAlunos as contAlunos" class="jumbotron">
+    
+
+                <input   class="form-control" type="text" name="numMatricula" ng-model ="contAlunos.funcionario.numContrato"  placeholder="Número do Contrato "></br>
+
+
+                <input class="form-control" type="text" name="nomeFun" ng-model ="contAlunos.funcionario.nomeFun" placeholder="Novo Nome"></br>
+                <input  class="form-control" type="text" name="idadeFun"  ng-model ="contAlunos.funcionario.idadeFun" placeholder="Nova Idade"> </br>
+                <input  class="form-control" type="text" name="telefoneFun"  ng-model ="contAlunos.funcionario.telefoneFun" placeholder="Novo Telefone"> </br>
+                <input  class="form-control" type="text" name="ruaFun" ng-model ="contAlunos.funcionario.ruaFun" placeholder="Nova Rua"> </br>
+                <input  class="form-control" type="text" name="bairroFun"  ng-model ="contAlunos.funcionario.bairroFun" placeholder="Novo Bairro"> </br>
+                <input  class="form-control" type="text" name="cidadeFun" ng-model ="contAlunos.funcionario.cidadeFun"  placeholder="Nova Cidade"> </br>
+                <input  class="form-control" type="text" name="senhaFun" ng-model ="contAlunos.funcionario.senhaFun" placeholder="Nova Senha"> </br>
+              <button class="btn btn-primary btn-block"  ng-click = "contAlunos.atualizarFuncionario()">Atualizar</button>	
+	
+
+
+
+    </body>
+
+     <div id="nav" class="nav">
+            <div class="icon">
+                <ul>
+                    <li><a href="indexFuncionario.html"><i class="fa fa-home"></i></a></li>
+                    
+                    <li><a href="cadastroAluno.html"><i class="fa fa-plus-circle"></i></a></li>
+                    <li><a href="cadastrarFuncionario.html"><i class="fa fa-plus-circle "></i></a></li>
+                    <li><a href="cadastrarAvaliacao.html"><i class="fa fa-plus-circle"></i></a></li>
+                    <li><a href="cadastrarExercicio.html"><i class="fa fa-plus-circle"></i></a></li>
+                    <li><a href="cadastrarTreino.html"><i class="fa fa-plus-circle"></i></a></li>
+
+                    <li><a href="atualizarAvaliacao.html"><i class="fa fa-refresh"></i></a></li>
+                    <li><a href="atualizarExercicio.html"><i class="fa fa-refresh "></i></a></li>
+                    <li><a href="atualizarFuncionario.html"><i class="fa fa-refresh"></i></a></li>
+                    <li><a href="atualizarTreino.html"><i class="fa fa-refresh"></i></a></li>
+                    <li><a href="atualizarDados.html"><i class="fa fa-refresh"></i></a></li>
+
+                    <li><a href="excluirAluno.html"><i class="fa fa-close "></i></a></li>
+                    <li><a href="excluirTreino.html"><i class="fa fa-close "></i></a></li>
+                    <li><a href="excluirAvaliacao.html"><i class="fa fa-close "></i></a></li>
+                    <li><a href="excluirFuncionario.html"><i class="fa fa-close "></i></a></li>
+
+
+                    <li><a href="listarAlunos.html"><i class="fa fa-search "></i></a></li>
+                    <li><a href="listarTreino.html"><i class="fa fa-search"></i></a></li>
+                    <li><a href="listarFuncionario.html"><i class="fa fa-search"></i></a></li>
+               
+            </div>
+
+            <div class="text">
+                <ul>
+                    <li><a href="indexFuncionario.html" >Home</a></li>
+                    <li><a href="cadastroAluno.html" >Cadastrar Aluno</a></li>
+                    <li><a href="cadastrarFuncionario.html" >Cadastrar Funcionario</a></li>
+                    <li><a href="cadastrarAvaliacao.html" >Cadastrar Avaliacao</a></li>
+                    <li><a href="cadastrarExercicio.html" >Cadastrar Exercicio</a></li>
+                    <li><a href="cadastrarTreino.html" >Cadastrar Treino</a></li>
+
+
+                    <li><a href="atualizarDados.html" >Atualizar Aluno</a></li>
+                    <li><a href="atualizarAvaliacao.html" >Atualizar Avaliacao</a></li>
+                    <li><a href="atualizarExercicio.html" >Atualizar Exercicio</a></li>
+                    <li><a href="atualizarFuncionario.html" >Atualizar Funcionario</a></li>
+                    <li><a href="atualizarTreino.html" >Atualizar Treino</a></li>
+
+                    <li><a href="excluirAluno.html" >Excluir Aluno</a></li>
+                    <li><a href="excluirTreino.html" >Excluir Treino</a></li>
+                    <li><a href="excluirAvaliacao.html" >Excluir Avaliacao</a></li>
+                    <li><a href="excluirExercicio.html" >Excluir Exercicio</a></li>
+                    <li><a href="excluirFuncionario.html" >Excluir Funcionario</a></li>
+
+                    <li><a href="listarAlunos.html" >Listar Alunos</a></li>
+                    <li><a href="listarTreino.html" >Listar Treino</a></li>
+                    <li><a href="listarFuncionario.html" >Listar Funcionario</a></li>
+                    <li><a href="listarExercicio.html" >Listar Exercicio</a></li>
+                    <li><a href="listarAvaliacao.html" >Listar Avaliacao</a></li>
+                
+
+                 
+                </ul>
+            </div>
+
+        </div>
+
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+</body>
+</html>
